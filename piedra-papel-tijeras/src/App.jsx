@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
 import './App.css'
 
+import Home from "./components/Home";
+import Rules from "./components/Rules"
+import SheldonVideo from "./components/SheldonVideo";
 
 function App() {
 
@@ -9,6 +11,8 @@ function App() {
     <BrowserRouter>
       <Routes> 
         <Route path="/" element={<Home/>}/>
+        <Route path="/rules" element={<Rules />} />
+        <Route path="/sheldon" element={<SheldonVideo />} />
       </Routes>
     </BrowserRouter>
   )
