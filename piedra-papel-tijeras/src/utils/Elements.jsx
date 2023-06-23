@@ -1,7 +1,7 @@
 
 // Anotacion : Buscar despues imagenes png
 
-export const Elements = [
+export const elements = [
     {
         nombre: "Piedra",
         emoji: "✊",

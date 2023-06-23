@@ -23,7 +23,7 @@ const Game = () => {
 
   return (
     <div className="container-home">
-        {showModal && <ModalElemento/>}
+        {showModal && <ModalElemento setShowModal={setShowModal}/>}
         <h1 className="container-title">Game</h1>
         <div className="container-game">
             <div>
