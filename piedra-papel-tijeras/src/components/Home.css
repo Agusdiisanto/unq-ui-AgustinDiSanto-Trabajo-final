@@ -13,6 +13,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background: black;
     color:white;
+    overflow: hidden;
 }
 
 .container-home {
@@ -21,13 +22,35 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    min-width: 50rem;
 }
 
-.container-title{
+.container-home p{
+    margin-bottom: 4rem;
+}
+
+.container-title{ 
+   font-size: 4.5rem;
    margin-bottom: 2rem;
 }
 
-.container-game{
+.container-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
-    padding: 2rem;
+    gap: 2rem;
+}
+
+.container-buttons p {
+    color: grey;
+}
+
+.container-img{
+    height: 20rem;
+    width:  20rem;
+}
+
+.container-player{
+    cursor: pointer;
 }
