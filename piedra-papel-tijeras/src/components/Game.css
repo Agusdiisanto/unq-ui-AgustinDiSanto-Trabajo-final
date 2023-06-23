@@ -1,0 +1,30 @@
+
+.container-game{
+    display: flex;
+    flex-direction: row;
+    padding: 4rem;
+    gap: 10rem;
+}
+
+.button-style {
+    width: 8rem;
+    height:8rem;
+    font-size: 4rem;
+    font-weight:900;
+    text-shadow: 2px 2px 4px rgba(123, 123, 123, 0.7);
+    border-radius: 50%;
+    background-color: rgb(76, 76, 76);
+    border-color: rgb(201, 201, 201);
+    box-shadow: 10px 0 30px rgba(216, 216, 216, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.button-style:hover{
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.score-text{
+    font-size: 1.3rem;
+    font-weight: 400;
+}

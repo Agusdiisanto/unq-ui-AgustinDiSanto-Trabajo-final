@@ -12,12 +12,16 @@ const Home = () => {
             <div className="container-buttons">
                 <div className="animate__animated animate__fadeInLeft container-player">
                     <h3 className="title-1">Un Jugador</h3>
+                    <Link to="/game">
                     <img src={SinglePlayer} alt="foto de singlePlayer" className="container-img"/>
+                    </Link>
                     <p>VS. Sheldon</p>
                 </div>
                 <div className="animate__animated animate__fadeInRight container-player">
                     <h3 className="title-2">Dos Jugadores</h3>
+                    <Link to="/game">
                     <img src={TwicePlayer} alt="foto de singlePlayer"className="container-img" />
+                    </Link>
                     <p>Localmente</p>
                 </div>
             </div>
