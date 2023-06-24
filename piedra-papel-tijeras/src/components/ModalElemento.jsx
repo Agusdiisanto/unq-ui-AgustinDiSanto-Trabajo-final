@@ -1,25 +1,34 @@
 import {elements} from "../utils/Elements"
 import "./ModalElemento.css"
 
-const ModalElemento = ({setShowModal}) => {
+const ModalElemento = ({player,setPlayer,setShowModal}) => {
 
-  const onCloseModal = () =>{
+  const selectElemento = (element) =>{
+    setPlayer({ ...player, currentChoice: element });
     setShowModal(false)
   } 
 
   return (
-    <div className="modal-overlay">
-      <div className="modal">
-        <div className="container-elements">
-          {elements.map((element) => 
-            <button onClick = {onCloseModal} className="elements-style elements-position"key={element.name}>
-              <p className="element-emoji">{element.emoji}</p>
-            </button>
-          )}
+    <>
+      {player.currentChoice === null && (
+        <div className="animate__animated animate__pulse modal-overlay">
+          <div className="modal">
+            <div className="container-elements">
+              {elements.map((element) => (
+                <button
+                  onClick={() => selectElemento(element)}
+                  className="elements-style elements-position"
+                  key={element.name}
+                >
+                  <p className="element-emoji">{element.emoji}</p>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  )
+      )}
+    </>
+  );
 }
 
 export default ModalElemento
