@@ -1,14 +1,15 @@
 import ModalElemento from "./ModalElemento"
 import { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom";
-import "./Game.css"
+import {randomOption} from "../utils/randomOption"
 import { calculateWinner } from "../utils/CalculateWinner";
-
+import "./Game.css"
 const Game = () => {
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const singlePlayer = queryParams.get("singlePlayer") === "true" ? true : false;
+    const shaldonOption = singlePlayer ? randomOption() : null;
     
     const [firstPlayer,setFirstPlayer] = useState({
         name:"Jugador 1",
@@ -19,7 +20,7 @@ const Game = () => {
 
     const [secondPlayer,setSecondPlayer] = useState({
         name: singlePlayer ? "Sheldon" : "Jugador 2 ",
-        currentChoice: null,
+        currentChoice: shaldonOption,
         score: 0,
         winner: false,
     })
@@ -42,6 +43,7 @@ const Game = () => {
                 score: firstPlayer.score + 1,
                 isCurrentWinner: true,
               });
+
             }
             if (winner.nombre === secondPlayer.currentChoice.nombre) {
               setSecondPlayer({
@@ -64,7 +66,7 @@ const Game = () => {
         });
         setSecondPlayer({
             ...secondPlayer,
-            currentChoice: null,
+            currentChoice: shaldonOption,
             score: isNewGame ? 0 : secondPlayer.score,
             isCurrentWinner: false,
         });
@@ -93,29 +95,40 @@ const Game = () => {
         <div className="container-game">
             <div>
                 <h3 className="title-1">{firstPlayer.name}</h3>
-                <button className={firstPlayer.currentChoice !== null ? "button-static" : "button-style"} onClick={openModalSinglePlayer}>{firstPlayer.currentChoice ? "..." : "?"}</button>
+                <button className={firstPlayer.currentChoice !== null ? "button-static" : "button-style"}
+                        onClick={openModalSinglePlayer}>
+                            {winner ? (firstPlayer.currentChoice.emoji) : (firstPlayer.currentChoice ? "..." : "?") }
+                </button>
                 <p className="score-text">Score : {firstPlayer.score}</p>
             </div>
             <div>
                  <Link to= "/">
-                <button>Inicio</button>
+                <button className="inicio-button">Inicio</button>
                 </Link>              
             </div>
             <div>
                 <h3 className="title-2">{secondPlayer.name}</h3>
                 <button className={singlePlayer || secondPlayer.currentChoice !== null ? "button-static" : "button-style"} 
-                        onClick={!singlePlayer ? openModalTwoPlayer : null}>{secondPlayer.currentChoice ? "..." : "?"}</button>
+                        onClick={!singlePlayer ? openModalTwoPlayer : null}>
+                            
+                            {winner ? (secondPlayer.currentChoice.emoji) : (secondPlayer.currentChoice ? "..." : "?") }
+
+                        </button>
                 <p className="score-text">Score : {secondPlayer.score}</p>
             </div>
         </div>
         {winner && (
-            <div>
-                <h3>{winner === "empate" ? "Hay Empate" : `${winner.nombre} gano`}</h3>
-                <div className="game-container__winner__buttons">
-                <button onClick={() => playAgain(true)}>Jugar de nuevo</button>
-                <button onClick={() => playAgain()}>Siguiente</button>
+            <div className="game-container-winner">
+                <h3 className="winner-message">{winner === "empate" ? "¡Hay empate!" : `${winner.nombre} ganó!`}</h3>
+                <div className="winner-buttons">
+                    <button className="winner-button" onClick={() => playAgain(true)}>
+                        Jugar de nuevo
+                    </button>
+                    <button className="winner-button" onClick={() => playAgain()}>
+                        Siguiente
+                    </button>
                 </div>
-            </div>
+          </div>
         )}
     </div>
   )
