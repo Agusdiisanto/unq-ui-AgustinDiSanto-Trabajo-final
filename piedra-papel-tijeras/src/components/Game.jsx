@@ -36,14 +36,14 @@ const Game = () => {
               secondPlayer.currentChoice
             );
             setWinner(winner);
-            if (winner.name === firstPlayer.currentChoice.name) {
+            if (winner.nombre === firstPlayer.currentChoice.nombre) {
               setFirstPlayer({
                 ...firstPlayer,
                 score: firstPlayer.score + 1,
                 isCurrentWinner: true,
               });
             }
-            if (winner.name === secondPlayer.currentChoice.name) {
+            if (winner.nombre === secondPlayer.currentChoice.nombre) {
               setSecondPlayer({
                 ...secondPlayer,
                 score: secondPlayer.score + 1,
@@ -79,7 +79,6 @@ const Game = () => {
         setShowModal(true)
     }
 
-    console.log(winner)
 
   return (
     <div className="container-home">
@@ -111,10 +110,10 @@ const Game = () => {
         </div>
         {winner && (
             <div>
-                <h3>{winner === "empate" ? "Hay Empate" : `${winner.name} gano`}</h3>
+                <h3>{winner === "empate" ? "Hay Empate" : `${winner.nombre} gano`}</h3>
                 <div className="game-container__winner__buttons">
-                    <button onClick={() => playAgain(true)}>Jugar de nuevo</button>
-                    <button onClick={() => playAgain()}>Siguiente</button>
+                <button onClick={() => playAgain(true)}>Jugar de nuevo</button>
+                <button onClick={() => playAgain()}>Siguiente</button>
                 </div>
             </div>
         )}

@@ -1,9 +1,9 @@
 const playerCanBeat = (player, opponent) => {
-    return player.betterThan.includes(opponent.name);
-  };
+    return player.leGanaA.includes(opponent.nombre);
+};
   
 export const calculateWinner = (player1, player2) => {
-if (player1.name === player2.name) {
+if (player1.nombre === player2.nombre) {
     return "empate";
 } else if (playerCanBeat(player1, player2)) {
     return player1;
