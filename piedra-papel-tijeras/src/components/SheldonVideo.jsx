@@ -9,7 +9,7 @@ const SheldonVideo = () => {
    gyroscope; picture-in-picture; web-share" allowfullscreen>
    </iframe>
     <div>
-      <Link to="/">Volver a inicio</Link>
+      <Link to="/" className="text-link">Volver a inicio</Link>
     </div>
   </div>
   )

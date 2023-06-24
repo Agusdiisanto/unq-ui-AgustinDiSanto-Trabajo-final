@@ -26,9 +26,11 @@ const Home = () => {
                     <p>Localmente</p>
                 </div>
             </div>
-            <Link to="/rules">
-            <p className="info-reglas">¿No conoces las reglas del juego?</p>
-            </Link>
+            <div>
+                <Link to="/rules">
+                <p className="text-link">¿No conoces las reglas del juego?</p>
+                </Link>
+            </div>
         </div>
     </div>
   )

@@ -81,6 +81,8 @@ const Game = () => {
         setShowModal(true)
     }
 
+    const buttonStyleFirst = firstPlayer.currentChoice !== null ? "button-static" : "button-style";
+    const buttonStyleSecond = singlePlayer || secondPlayer.currentChoice !== null ? "button-static" : "button-style"
 
   return (
     <div className="container-home">
@@ -95,7 +97,7 @@ const Game = () => {
         <div className="container-game">
             <div>
                 <h3 className="title-1">{firstPlayer.name}</h3>
-                <button className={firstPlayer.currentChoice !== null ? "button-static" : "button-style"}
+                <button className={`${buttonStyleFirst}`}
                         onClick={openModalSinglePlayer}>
                             {winner ? (firstPlayer.currentChoice.emoji) : (firstPlayer.currentChoice ? "..." : "?") }
                 </button>
@@ -108,12 +110,12 @@ const Game = () => {
             </div>
             <div>
                 <h3 className="title-2">{secondPlayer.name}</h3>
-                <button className={singlePlayer || secondPlayer.currentChoice !== null ? "button-static" : "button-style"} 
+                <button className={`${buttonStyleSecond}`} 
                         onClick={!singlePlayer ? openModalTwoPlayer : null}>
                             
                             {winner ? (secondPlayer.currentChoice.emoji) : (secondPlayer.currentChoice ? "..." : "?") }
 
-                        </button>
+                </button>
                 <p className="score-text">Score : {secondPlayer.score}</p>
             </div>
         </div>

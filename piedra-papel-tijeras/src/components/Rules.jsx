@@ -23,12 +23,14 @@ const Rules = () => {
                       Spock vaporiza a Piedra <br/>
                       y como siempre, Piedra aplasta a Tijera <br/>
                     </p>
-                    <Link to="/sheldon">Explicacion de Sheldon</Link>
+                    <Link to="/sheldon" className="text-link">
+                      Explicacion de Sheldon
+                    </Link>
                 </div>
             </div>
         </div>
         <div className="go-back">
-        <Link to="/">Volver a inicio </Link>
+        <Link to="/" className="text-link">Volver a inicio </Link>
         </div>
     </div>
   )

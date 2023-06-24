@@ -70,13 +70,3 @@
 .title-2{
   color : #FB6E00
 }
-
-.info-reglas{
-  transition: transform 0.3s ease-in-out;
-  padding-bottom: 2.5rem;
-}
-
-.info-reglas:hover{
-  cursor: pointer;
-  color: blue;
-}

@@ -48,3 +48,18 @@
 .go-back{
     padding: 2rem;
 }
+
+.text-link{
+  display: inline-block;
+  color: grey;
+  font-size: 1.0rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.text-link:hover {
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+}
