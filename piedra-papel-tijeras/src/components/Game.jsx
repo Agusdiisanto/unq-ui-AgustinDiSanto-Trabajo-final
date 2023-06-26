@@ -9,7 +9,7 @@ const Game = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const singlePlayer = queryParams.get("singlePlayer") === "true" ? true : false;
-    const shaldonOption = singlePlayer ? randomOption() : null;
+    const IAOption = singlePlayer ? randomOption() : null;
     
     const [firstPlayer,setFirstPlayer] = useState({
         name:"Jugador 1",
@@ -19,8 +19,8 @@ const Game = () => {
     })
 
     const [secondPlayer,setSecondPlayer] = useState({
-        name: singlePlayer ? "Sheldon" : "Jugador 2 ",
-        currentChoice: shaldonOption,
+        name: singlePlayer ? "IA" : "Jugador 2 ",
+        currentChoice: IAOption,
         score: 0,
         winner: false,
     })
@@ -41,15 +41,14 @@ const Game = () => {
               setFirstPlayer({
                 ...firstPlayer,
                 score: firstPlayer.score + 1,
-                isCurrentWinner: true,
+                winner: true,
               });
-
             }
             if (winner.nombre === secondPlayer.currentChoice.nombre) {
               setSecondPlayer({
                 ...secondPlayer,
                 score: secondPlayer.score + 1,
-                isCurrentWinner: true,
+                winner: true,
               });
             }
           }, 1000);
@@ -62,13 +61,13 @@ const Game = () => {
             ...firstPlayer,
             currentChoice: null,
             score: isNewGame ? 0 : firstPlayer.score,
-            isCurrentWinner: false,
+            winner: false,
         });
         setSecondPlayer({
             ...secondPlayer,
-            currentChoice: shaldonOption,
+            currentChoice: IAOption,
             score: isNewGame ? 0 : secondPlayer.score,
-            isCurrentWinner: false,
+            winner: false,
         });
     }; 
     const openModalSinglePlayer = () =>{
@@ -81,8 +80,10 @@ const Game = () => {
         setShowModal(true)
     }
 
-    const buttonStyleFirst = firstPlayer.currentChoice !== null ? "button-static" : "button-style";
-    const buttonStyleSecond = singlePlayer || secondPlayer.currentChoice !== null ? "button-static" : "button-style"
+    const buttonStyleFirst = firstPlayer.currentChoice !== null ? `${firstPlayer.winner && winner ? "effect-winner" : "effect-loser"} button-static ` 
+                             : `button-style`;
+    const buttonStyleSecond = singlePlayer || secondPlayer.currentChoice !== null ? `${secondPlayer.winner && winner ? "effect-winner" : "effect-loser"} button-static`
+     : `button-style`
 
   return (
     <div className="container-home">

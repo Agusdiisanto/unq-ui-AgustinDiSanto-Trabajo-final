@@ -1,5 +1,5 @@
 
-// Anotacion : Buscar despues imagenes png
+// Anotacion : Buscar despues imagenes.webp
 
 export const elements = [
     {

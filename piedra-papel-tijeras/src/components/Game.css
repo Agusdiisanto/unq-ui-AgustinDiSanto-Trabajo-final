@@ -5,6 +5,14 @@
     gap: 10rem;
 }
 
+.effect-winner {
+    box-shadow: -1px 0px 30px 2px rgba(4, 255, 0, 0.8);
+}
+
+.effect-loser {
+    box-shadow: -1px 0px 30px 2px rgba(255, 0, 0, 0.8);
+}
+
 .button-style {
     width: 8rem;
     height:8rem;
@@ -14,16 +22,7 @@
     border-radius: 50%;
     background-color: rgb(76, 76, 76);
     border-color: rgb(201, 201, 201);
-    box-shadow: 10px 0 30px rgba(216, 216, 216, 0.2);
     transition: transform 0.3s ease-in-out;
-}
-
-.effect-winner {
-    box-shadow: -1px 0px 30px 2px rgba(4, 255, 0, 0.8);
-}
-
-.effect-loser {
-    box-shadow: -1px 0px 30px 2px rgba(255, 0, 0, 0.8);
 }
 
 .button-static{
@@ -35,7 +34,6 @@
     border-radius: 50%;
     background-color: rgb(76, 76, 76);
     border-color: rgb(201, 201, 201);
-    box-shadow: 10px 0 30px rgba(216, 216, 216, 0.2);
     pointer-events: none;
 }
 
