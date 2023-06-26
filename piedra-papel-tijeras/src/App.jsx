@@ -3,9 +3,9 @@ import './App.css'
 
 // Componentes - Inicio
 import Home from "./components/Home";
-import Rules from "./components/Rules"
+import Rules from "./components/rules/Rules"
 // Video de Sheldon monstrando el juego
-import SheldonVideo from "./components/SheldonVideo";
+import SheldonVideo from "./components/rules/SheldonVideo";
 // Juego
 import Game from "./components/Game";
 

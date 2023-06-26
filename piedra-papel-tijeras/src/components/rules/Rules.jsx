@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import reglas from "../img/rules.png"
+import reglas from "../../img/rules.png"
 import "./Rules.css"
 
 const Rules = () => {

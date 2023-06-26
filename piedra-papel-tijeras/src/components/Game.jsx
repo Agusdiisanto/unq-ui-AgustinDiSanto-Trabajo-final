@@ -80,10 +80,13 @@ const Game = () => {
         setShowModal(true)
     }
 
-    const buttonStyleFirst = firstPlayer.currentChoice !== null ? `${firstPlayer.winner && winner ? "effect-winner" : "effect-loser"} button-static ` 
-                             : `button-style`;
-    const buttonStyleSecond = singlePlayer || secondPlayer.currentChoice !== null ? `${secondPlayer.winner && winner ? "effect-winner" : "effect-loser"} button-static`
-     : `button-style`
+    const buttonStyleFirst = firstPlayer.currentChoice !== null
+    ? (winner && firstPlayer.winner) ? "effect-winner button-static" : (winner && !firstPlayer.winner) ? "effect-loser button-static" : "button-static"
+    : "button-style";
+
+    const buttonStyleSecond = singlePlayer || secondPlayer.currentChoice !== null
+    ? (winner && secondPlayer.winner) ? "effect-winner button-static" : (winner && !secondPlayer.winner) ? "effect-loser button-static" : "button-static"
+    : "button-style";
 
   return (
     <div className="container-home">
