@@ -8,7 +8,7 @@ Link :
 
 ## ¿Como correr el juego?
 
-PASO 1 : Situarnos en la carpeta piedras-papel-tijeras
+PASO 1 : Situarnos en la carpeta piedras-papel-tijeras <br> 
 PASO 2 : En la terminal ejecutar el comando npm install vite --save-dev
 PASO 3 : Ejectutar el comando npm i para instalar todas las dependencias
 PASO 4 : Ejectutar el comando npm run dev
