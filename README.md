@@ -1,5 +1,8 @@
 # Enunciado
 
+Tienen que programar un juego de Piedra, Papel, Tijera, Lagarto o Spock, el cual se hizo conocido gracias a Sheldon Cooper pero en realidad fue inventado por Sam Kass y Karen Bryla.
+
+Link : 
 [https://github.com/unq-ui/material/tree/master/TPs/2023s1](https://github.com/unq-ui/material/blob/master/TFIs/2023s1-TFI.md)
 
 
