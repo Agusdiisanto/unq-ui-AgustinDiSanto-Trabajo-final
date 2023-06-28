@@ -7,13 +7,13 @@
   height: 100vh;
 }
 
-.container-home p{
-  margin-bottom: 4rem;
+.container-home p {
+  margin-bottom: 2rem;
 }
 
-.container-title{ 
+.container-title {
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 4rem;
   opacity: 0.7;
   padding-bottom: 0.5rem;
 }
@@ -25,16 +25,16 @@
   width: 100%;
 }
 
-.container-mode-title{
+.container-mode-title {
   font-size: 2.2rem;
   font-weight: 300;
   margin: 0;
   opacity: 0.8;
 }
 
-.container-buttons{
+.container-buttons {
   display: flex;
-  gap: 10rem;
+  gap: 4rem;
   padding: 1rem 0;
   width: 100%;
   justify-content: center;
@@ -44,18 +44,18 @@
   color: grey;
 }
 
-.container-img{
+.container-img {
   height: 15vw;
-  width:  15vw;
+  width: 15vw;
   transition: transform 0.3s ease-in-out;
 }
 
-.container-img:hover{
+.container-img:hover {
   cursor: pointer;
   transform: scale(0.8);
 }
 
-.container-player{
+.container-player {
   font-size: 1rem;
   text-align: center;
   display: flex;
@@ -63,10 +63,93 @@
   gap: 5px;
 }
 
-.title-1{
-  color:#20ABFF
+.title-1 {
+  color: #20abff;
 }
 
-.title-2{
-  color : #FB6E00
+.title-2 {
+  color: #fb6e00;
+}
+
+/* Media queries para diferentes resoluciones */
+
+/* Estilos para pantallas de hasta 600px de ancho */
+@media only screen and (max-width: 600px) {
+  .container-title {
+    font-size: 3rem;
+  }
+
+  .container-mode-title {
+    font-size: 1.8rem;
+  }
+
+  .container-buttons {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .container-buttons p {
+    margin: 0;
+  }
+
+  .container-img {
+    height: 30vw;
+    width: 30vw;
+  }
+}
+
+/* Estilos para pantallas de 601px a 900px de ancho */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .container-title {
+    font-size: 3.5rem;
+  }
+
+  .container-mode-title {
+    font-size: 2rem;
+  }
+
+  .container-buttons {
+    gap: 6rem;
+  }
+
+  .container-img {
+    height: 12vw;
+    width: 12vw;
+  }
+}
+
+/* Estilos para pantallas de 901px a 1200px de ancho */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .container-title {
+    font-size: 4.5rem;
+  }
+
+  .container-mode-title {
+    font-size: 2.5rem;
+  }
+
+  .container-buttons {
+    gap: 8rem;
+  }
+
+  .container-img {
+    height: 10vw;
+    width: 10vw;
+  }
+}
+
+/* Estilos para pantallas de más de 1200px de ancho */
+@media only screen and (min-width: 1201px) {
+  .container-title {
+    font-size: 4.5rem;
+  }
+
+  .container-mode-title {
+    font-size: 2.5rem;
+  }
+
+  .container-img {
+    height: 15vw;
+    width: 15vw;
+  }
 }

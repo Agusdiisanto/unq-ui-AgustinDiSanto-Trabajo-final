@@ -51,19 +51,19 @@ const Game = () => {
         if (firstPlayer.currentChoice && secondPlayer.currentChoice) {
         setTimeout(() => {
             const winner = calculateWinner(
-            firstPlayer.currentChoice,
-            secondPlayer.currentChoice
+                firstPlayer.currentChoice,
+                secondPlayer.currentChoice
             );
             setWinner(winner);
             setFirstPlayer((prevPlayer) => ({
-            ...prevPlayer,
-            score: checkWinner(prevPlayer),
-            winner: winner.nombre === prevPlayer.currentChoice.nombre,
+                ...prevPlayer,
+                score: checkWinner(prevPlayer),
+                winner: winner.nombre === prevPlayer.currentChoice.nombre,
             }));
             setSecondPlayer((prevPlayer) => ({
-            ...prevPlayer,
-            score: checkWinner(prevPlayer),
-            winner: winner.nombre === prevPlayer.currentChoice.nombre,
+                ...prevPlayer,
+                score: checkWinner(prevPlayer),
+                winner: winner.nombre === prevPlayer.currentChoice.nombre,
             }));
         }, 1000);
         }
@@ -72,16 +72,16 @@ const Game = () => {
     const playAgain = (isNewGame = false) => {
         setWinner(null);
         setFirstPlayer((prevPlayer) => ({
-        ...prevPlayer,
-        currentChoice: null,
-        score: isNewGame ? 0 : prevPlayer.score,
-        winner: false,
+            ...prevPlayer,
+            currentChoice: null,
+            score: isNewGame ? 0 : prevPlayer.score,
+            winner: false,
         }));
         setSecondPlayer((prevPlayer) => ({
-        ...prevPlayer,
-        currentChoice: IAOption,
-        score: isNewGame ? 0 : prevPlayer.score,
-        winner: false,
+            ...prevPlayer,
+            currentChoice: IAOption,
+            score: isNewGame ? 0 : prevPlayer.score,
+            winner: false,
         }));
     };
 
@@ -115,38 +115,38 @@ return (
     )}
     <h1 className="container-title">Game</h1>
     <div className="container-game">
-        <div>
-        <h3 className="title-1">{firstPlayer.name}</h3>
-        <button
-            className={firstPlayerButtonClass}
-            onClick={() => openModal("first")}
-        >
-            {winner
-            ? firstPlayer.currentChoice.emoji
-            : firstPlayer.currentChoice
-            ? "..."
-            : "?"}
-        </button>
-        <p className="score-text">Score: {firstPlayer.score}</p>
+        <div className="container-player">
+            <h3 className="title-1">{firstPlayer.name}</h3>
+            <button
+                className={firstPlayerButtonClass}
+                onClick={() => openModal("first")}
+            >
+                {winner
+                ? firstPlayer.currentChoice.emoji
+                : firstPlayer.currentChoice
+                ? "..."
+                : "?"}
+            </button>
+            <p className="score-text">Score: {firstPlayer.score}</p>
         </div>
         <div>
         <Link to="/">
             <button className="inicio-button">Inicio</button>
         </Link>
         </div>
-        <div>
-        <h3 className="title-2">{secondPlayer.name}</h3>
-        <button
-            className={secondPlayerButtonClass}
-            onClick={!singlePlayer ? () => openModal("") : null}
-        >
-            {winner
-            ? secondPlayer.currentChoice.emoji
-            : secondPlayer.currentChoice
-            ? "..."
-            : "?"}
-        </button>
-        <p className="score-text">Score: {secondPlayer.score}</p>
+        <div className="container-player">
+            <h3 className="title-2">{secondPlayer.name}</h3>
+            <button
+                className={secondPlayerButtonClass}
+                onClick={!singlePlayer ? () => openModal("") : null}
+            >
+                {winner
+                ? secondPlayer.currentChoice.emoji
+                : secondPlayer.currentChoice
+                ? "..."
+                : "?"}
+            </button>
+            <p className="score-text">Score: {secondPlayer.score}</p>
         </div>
     </div>
     {winner && (
@@ -154,7 +154,7 @@ return (
         <h3 className="winner-message">
             {winner === "empate" ? "¡Hay empate!" : `${winner.nombre} ganó!`}
         </h3>
-        <div className="winner-buttons">
+        <div className="winner-buttons"> 
             <button className="winner-button" onClick={() => playAgain(true)}>
             Jugar de nuevo
             </button>
