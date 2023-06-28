@@ -37,11 +37,11 @@ const Game = () => {
 
     const checkWinner = (player) => {
         if (!firstPlayer.currentChoice || !secondPlayer.currentChoice) {
-        return null;
+            return null;
         }
         const winner = calculateWinner(
-        firstPlayer.currentChoice,
-        secondPlayer.currentChoice
+            firstPlayer.currentChoice,
+            secondPlayer.currentChoice
         );
         const isWinner = winner.nombre === player.currentChoice.nombre;
         return isWinner ? player.score + 1 : player.score;
@@ -103,69 +103,83 @@ const Game = () => {
         "effect-winner": winner && secondPlayer.winner,
         "effect-loser": winner && !secondPlayer.winner,
     });
-
-return (
-    <div className="container-home">
-    {showModal && (
-        <ModalElemento
-        player={activePlayer === "first" ? firstPlayer : secondPlayer}
-        setPlayer={activePlayer === "first" ? setFirstPlayer : setSecondPlayer}
-        setShowModal={setShowModal}
-        />
-    )}
-    <h1 className="container-title">Game</h1>
-    <div className="container-game">
-        <div className="container-player">
-            <h3 className="title-1">{firstPlayer.name}</h3>
-            <button
-                className={firstPlayerButtonClass}
-                onClick={() => openModal("first")}
-            >
-                {winner
-                ? firstPlayer.currentChoice.emoji
-                : firstPlayer.currentChoice
-                ? "..."
-                : "?"}
-            </button>
-            <p className="score-text">Score: {firstPlayer.score}</p>
+    /* 
+        Comentario de Jota : 
+            - Intentar minimizar los 3 ifs anidados 
+                {
+                    winner
+                    ? firstPlayer.currentChoice.emoji
+                    : firstPlayer.currentChoice
+                    ? "..."
+                    : "?"
+                 }
+            - De alguna forma el usuario sabe cuando es jugador 1 y 2
+            es decir no lo tengo que especificar yo, entonces cuando el usuario 
+                 
+            - Intentar extraer funciones y logica en otros componentes 
+    */
+    return (
+        <div className="container-home">
+        {showModal && (
+            <ModalElemento
+                player={activePlayer === "first" ? firstPlayer : secondPlayer}
+                setPlayer={activePlayer === "first" ? setFirstPlayer : setSecondPlayer}
+                setShowModal={setShowModal}
+            />
+        )}
+        <h1 className="container-title">Game</h1>
+        <div className="container-game">
+            <div className="container-player">
+                <h3 className="title-1">{firstPlayer.name}</h3>
+                <button
+                    className={firstPlayerButtonClass}
+                    onClick={() => openModal("first")}
+                >   
+                    {winner
+                    ? firstPlayer.currentChoice.emoji
+                    : firstPlayer.currentChoice
+                    ? "..."
+                    : "?"}
+                </button>
+                <p className="score-text">Score: {firstPlayer.score}</p>
+            </div>
+            <div>
+            <Link to="/">
+                <button className="inicio-button">Inicio</button>
+            </Link>
+            </div>
+            <div className="container-player">
+                <h3 className="title-2">{secondPlayer.name}</h3>
+                <button
+                    className={secondPlayerButtonClass}
+                    onClick={!singlePlayer ? () => openModal("") : null}
+                >
+                    {winner
+                    ? secondPlayer.currentChoice.emoji
+                    : secondPlayer.currentChoice
+                    ? "..."
+                    : "?"}
+                </button>
+                <p className="score-text">Score: {secondPlayer.score}</p>
+            </div>
         </div>
-        <div>
-        <Link to="/">
-            <button className="inicio-button">Inicio</button>
-        </Link>
+        {winner && (
+            <div className="game-container-winner">
+            <h3 className="winner-message">
+                {winner === "empate" ? "¡Hay empate!" : `${winner.nombre} ganó!`}
+            </h3>
+            <div className="winner-buttons"> 
+                <button className="winner-button" onClick={() => playAgain(true)}>
+                Jugar de nuevo
+                </button>
+                <button className="winner-button" onClick={() => playAgain()}>
+                Siguiente
+                </button>
+            </div>
+            </div>
+        )}
         </div>
-        <div className="container-player">
-            <h3 className="title-2">{secondPlayer.name}</h3>
-            <button
-                className={secondPlayerButtonClass}
-                onClick={!singlePlayer ? () => openModal("") : null}
-            >
-                {winner
-                ? secondPlayer.currentChoice.emoji
-                : secondPlayer.currentChoice
-                ? "..."
-                : "?"}
-            </button>
-            <p className="score-text">Score: {secondPlayer.score}</p>
-        </div>
-    </div>
-    {winner && (
-        <div className="game-container-winner">
-        <h3 className="winner-message">
-            {winner === "empate" ? "¡Hay empate!" : `${winner.nombre} ganó!`}
-        </h3>
-        <div className="winner-buttons"> 
-            <button className="winner-button" onClick={() => playAgain(true)}>
-            Jugar de nuevo
-            </button>
-            <button className="winner-button" onClick={() => playAgain()}>
-            Siguiente
-            </button>
-        </div>
-        </div>
-    )}
-    </div>
-);
+    );
 };
 
 export default Game;
