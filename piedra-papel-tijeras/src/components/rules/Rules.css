@@ -1,5 +1,4 @@
-
-.container-home-rules{
+.container-home-rules {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,20 +6,20 @@
   height: 100vh;
 }
 
-.rules-title{
+.rules-title {
   font-weight: bold;
   font-size: 4rem;
   opacity: 0.7;
   padding-bottom: 1rem;
 }
 
-.rules-img{
+.rules-img {
   width: 50%;
   height: 100%;
   margin-right: 10rem;
 }
 
-.rules-description{
+.rules-description {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -28,7 +27,7 @@
   width: 100%;
 }
 
-.rules-description-text{
+.rules-description-text {
   display: flex;
   white-space: 'pre-line';
   flex-direction: column;
@@ -36,7 +35,7 @@
   justify-content: center;
 }
 
-.rules-description-text p{
+.rules-description-text p {
   font-size: 1.5rem;
   font-weight: 700;
   color: #fff;
@@ -45,11 +44,11 @@
   opacity: 0.8;
 }
 
-.go-back{
-    padding: 2rem;
+.go-back {
+  padding: 2rem;
 }
 
-.text-link{
+.text-link {
   display: inline-block;
   color: grey;
   font-size: 1.0rem;
@@ -62,4 +61,86 @@
   cursor: pointer;
   font-weight: 700;
   text-decoration: underline;
+}
+
+/* Media queries para diferentes resoluciones */
+
+/* Estilos para pantallas de hasta 600px de ancho */
+@media only screen and (max-width: 600px) {
+  .rules-title {
+    font-size: 3rem;
+  }
+
+  .rules-img {
+    width: 40%;
+    margin-right: 5rem;
+  }
+
+  .rules-description-text p {
+    font-size: 1.3rem;
+  }
+
+  .go-back {
+    padding: 1rem;
+  }
+}
+
+/* Estilos para pantallas de 601px a 900px de ancho */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .rules-title {
+    font-size: 3.5rem;
+  }
+
+  .rules-img {
+    width: 20%;
+    margin-right: 7rem;
+  }
+
+  .rules-description-text p {
+    font-size: 1.4rem;
+  }
+
+  .go-back {
+    padding: 1.5rem;
+  }
+}
+
+/* Estilos para pantallas de 901px a 1200px de ancho */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .rules-title {
+    font-size: 3.8rem;
+  }
+
+  .rules-img {
+    width: 28%;
+    margin-right: 8rem;
+  }
+
+  .rules-description-text p {
+    font-size: 1.45rem;
+  }
+
+  .go-back {
+    padding: 1.8rem;
+  }
+}
+
+/* Estilos para pantallas de más de 1200px de ancho */
+@media only screen and (min-width: 1201px) {
+
+  .rules-title {
+    font-size: 3.8rem;
+  }
+  .rules-description-text p {
+    font-size: 1.45rem;
+  }
+
+  .go-back {
+    padding: 1.8rem;
+  }
+
+  .rules-img {
+    width: 38%;
+    margin-right: 10rem;
+  }
 }
