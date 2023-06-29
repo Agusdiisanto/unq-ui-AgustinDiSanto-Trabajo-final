@@ -1,34 +1,36 @@
-import {elements} from "../utils/Elements"
-import "./ModalElemento.css"
+import PropTypes from "prop-types";
+import "./ModalElemento.css";
+import ElementList from "../utils/ElementList";
 
-const ModalElemento = ({player,setPlayer,setShowModal}) => {
-
-  const selectElemento = (element) =>{
+const ModalElemento = ({ player, setPlayer, setShowModal }) => {
+  const selectElemento = (element) => {
     setPlayer({ ...player, currentChoice: element });
-    setShowModal(false)
-  } 
+    setShowModal(false);
+  };
 
   return (
     <>
       {player.currentChoice === null && (
         <div className="animate__animated animate__pulse modal-overlay">
           <div className="modal">
-            <div className="container-elements">
-              {elements.map((element) => (
-                <button
-                  onClick={() => selectElemento(element)}
-                  className="elements-style elements-position"
-                  key={element.name}
-                >
-                  <p className="element-emoji">{element.emoji}</p>
-                </button>
-              ))}
-            </div>
+            <ElementList selectElemento={selectElemento} />
           </div>
         </div>
       )}
     </>
   );
-}
+};
 
-export default ModalElemento
+ModalElemento.propTypes = {
+  player: PropTypes.shape({
+    currentChoice: PropTypes.shape({
+      nombre: PropTypes.string.isRequired,
+      emoji: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
+  setPlayer: PropTypes.func.isRequired,
+  setShowModal: PropTypes.func.isRequired,
+};
+
+export default ModalElemento;
+

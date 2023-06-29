@@ -7,7 +7,7 @@ import Rules from "./components/rules/Rules"
 // Video de Sheldon monstrando el juego
 import SheldonVideo from "./components/rules/SheldonVideo";
 // Juego
-import Game from "./components/Game";
+import Game from "./components/Game/Game";
 
 function App() {
 
