@@ -1,206 +1,213 @@
 .container-game {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  padding: 4rem;
+  gap: 10rem;
+  justify-content: center;
+}
+
+.effect-winner {
+  box-shadow: -1px 0px 30px 2px rgba(4, 255, 0, 0.8);
+}
+
+.effect-loser {
+  box-shadow: -1px 0px 30px 2px rgba(255, 0, 0, 0.8);
+}
+
+.button-style {
+  width: 8rem;
+  height: 8rem;
+  font-size: 4rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(123, 123, 123, 0.7);
+  border-radius: 50%;
+  background-color: rgb(76, 76, 76);
+  border-color: rgb(201, 201, 201);
+  transition: transform 0.3s ease-in-out;
+}
+
+.button-static {
+  width: 8rem;
+  height: 8rem;
+  font-size: 4rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(123, 123, 123, 0.7);
+  border-radius: 50%;
+  background-color: rgb(76, 76, 76);
+  border-color: rgb(201, 201, 201);
+  pointer-events: none;
+}
+
+.button-style:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+.score-text {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.game-container-winner {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-container-winner h3 {
+  font-size: 2.2rem;
+  color: #858585;
+  margin-bottom: 20px;
+}
+
+.winner-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.winner-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.winner-button:hover {
+  background-color: #0056b3;
+}
+
+.inicio-button {
+  background-color: #4f4f4f;
+  color: rgb(180, 180, 180);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inicio-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Media queries para diferentes resoluciones */
+
+/* Estilos para pantallas de hasta 600px de ancho */
+@media only screen and (max-width: 600px) {
+  .container-game {
+    flex-direction: column;
     padding: 4rem;
-    gap: 10rem;
-    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
   }
-  
+
   .effect-winner {
-    box-shadow: -1px 0px 30px 2px rgba(4, 255, 0, 0.8);
+    box-shadow: -1px 0px 20px 2px rgba(4, 255, 0, 0.8);
   }
-  
+
   .effect-loser {
-    box-shadow: -1px 0px 30px 2px rgba(255, 0, 0, 0.8);
+    box-shadow: -1px 0px 25px 2px rgba(255, 0, 0, 0.8);
   }
-  
-  .button-style {
-    width: 8rem;
-    height: 8rem;
-    font-size: 4rem;
-    font-weight: 900;
-    text-shadow: 2px 2px 4px rgba(123, 123, 123, 0.7);
-    border-radius: 50%;
-    background-color: rgb(76, 76, 76);
-    border-color: rgb(201, 201, 201);
-    transition: transform 0.3s ease-in-out;
-  }
-  
+
+  .button-style,
   .button-static {
-    width: 8rem;
-    height: 8rem;
-    font-size: 4rem;
-    font-weight: 900;
-    text-shadow: 2px 2px 4px rgba(123, 123, 123, 0.7);
-    border-radius: 50%;
-    background-color: rgb(76, 76, 76);
-    border-color: rgb(201, 201, 201);
-    pointer-events: none;
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
   }
-  
-  .button-style:hover {
-    cursor: pointer;
-    transform: scale(0.9);
-  }
-  
+
   .score-text {
-    font-size: 1.3rem;
-    font-weight: 400;
+    font-size: 1rem;
   }
-  
+
   .game-container-winner {
-    text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
-  
+
+  .game-container-winner h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* Estilos para pantallas de 601px a 900px de ancho */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .container-game {
+    padding: 3rem;
+    gap: 8rem;
+    align-items: center;
+  }
+
+  .effect-winner{
+    box-shadow: -1px 0px 25px 2px rgba(4, 255, 0, 0.8);
+  }
+
+  .effect-loser {
+    box-shadow: -1px 0px 25px 2px rgba(255, 0, 0, 0.8);
+  }
+
+  .button-style,
+  .button-static {
+    width: 7rem;
+    height: 7rem;
+    font-size: 3.5rem;
+  }
+
+  .score-text {
+    font-size: 1.2rem;
+  }
+
+  .game-container-winner {
+    margin-bottom: 1.5rem;
+  }
+
+  .game-container-winner h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+}
+
+/* Estilos para pantallas de 901px a 1200px de ancho */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .container-game {
+    padding: 3rem;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .effect-winner{
+    box-shadow: -1px 0px 25px 2px rgba(4, 255, 0, 0.8);
+  }
+
+  .effect-loser {
+    box-shadow: -1px 0px 25px 2px rgba(255, 0, 0, 0.8);
+  }
+
+  .button-style,
+  .button-static {
+    width: 7rem;
+    height: 7rem;
+    font-size: 3.5rem;
+  }
+
+  .score-text {
+    font-size: 1.2rem;
+  }
+
+  .game-container-winner {
+    margin-bottom: 3rem;
+  }
+
   .game-container-winner h3 {
     font-size: 2.2rem;
-    color: #858585;
     margin-bottom: 20px;
   }
-  
-  .winner-buttons {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .winner-button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  .winner-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .inicio-button {
-    background-color: #4f4f4f;
-    color: rgb(180, 180, 180);
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 700;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .inicio-button:hover {
-    background-color: #d32f2f;
-  }
-  
-  /* Media queries para diferentes resoluciones */
-  
-  /* Estilos para pantallas de hasta 600px de ancho */
-  @media only screen and (max-width: 600px) {
-    .container-game {
-      flex-direction: column;
-      padding: 2rem;
-      gap: 4rem;
-    }
-  
-    .effect-winner,
-    .effect-loser {
-      box-shadow: -1px 0px 20px 2px rgba(4, 255, 0, 0.8);
-    }
-  
-    .button-style,
-    .button-static {
-      width: 6rem;
-      height: 6rem;
-      font-size: 3rem;
-    }
-  
-    .score-text {
-      font-size: 1rem;
-    }
-  
-    .game-container-winner {
-      margin-bottom: 1rem;
-    }
-  
-    .game-container-winner h3 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-  }
-  
-  /* Estilos para pantallas de 601px a 900px de ancho */
-  @media only screen and (min-width: 601px) and (max-width: 900px) {
-    .container-game {
-      padding: 3rem;
-      gap: 8rem;
-    }
-  
-    .effect-winner,
-    .effect-loser {
-      box-shadow: -1px 0px 25px 2px rgba(4, 255, 0, 0.8);
-    }
-  
-    .button-style,
-    .button-static {
-      width: 7rem;
-      height: 7rem;
-      font-size: 3.5rem;
-    }
-  
-    .score-text {
-      font-size: 1.2rem;
-    }
-  
-    .game-container-winner {
-      margin-bottom: 1.5rem;
-    }
-  
-    .game-container-winner h3 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-  }
-  
-  /* Estilos para pantallas de 901px a 1200px de ancho */
-  @media only screen and (min-width: 901px) and (max-width: 1200px) {
-    .container-game {
-      padding: 3rem;
-      gap: 8rem;
-    }
-  
-    .effect-winner,
-    .effect-loser {
-      box-shadow: -1px 0px 25px 2px rgba(4, 255, 0, 0.8);
-    }
-  
-    .button-style,
-    .button-static {
-      width: 7rem;
-      height: 7rem;
-      font-size: 3.5rem;
-    }
-  
-    .score-text {
-      font-size: 1.2rem;
-    }
-  
-    .game-container-winner {
-      margin-bottom: 3rem;
-    }
-  
-    .game-container-winner h3 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-  }
-  
-  /* Estilos para pantallas de más de 1200px de ancho */
-  @media only screen and (min-width: 1201px) {
-    .game-container-winner {
-      margin-bottom: 5rem;
-    }
-  }
-  
+}
+
+

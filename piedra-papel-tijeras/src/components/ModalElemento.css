@@ -1,59 +1,103 @@
-
 .modal-overlay {
     position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color:  rgba(36,45,52,0.7);
+    background-color: rgba(36, 45, 52, 0.7);
     z-index: 9999;
-}
-
-.modal{
+  }
+  
+  .modal {
     box-shadow: 0 0 12px rgba(0, 153, 255);
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centra vertical y horizontalmente */
+    transform: translate(-50%, -50%);
     height: 150px;
     width: 600px;
     background: black;
     border-radius: 1rem;
     font-size: 15px;
-}
-
-.container-elements{
+  }
+  
+  .container-elements {
     display: flex !important;
     justify-content: space-around;
     padding: 2rem;
-}
-
-.elements-style{
+  }
+  
+  .elements-style {
     width: 5rem;
-    height:5rem;
+    height: 5rem;
     border-radius: 50%;
     background-color: rgb(76, 76, 76);
     border-color: rgb(201, 201, 201);
     box-shadow: 10px 0 30px rgba(216, 216, 216, 0.2);
     transition: transform 0.3s ease-in-out;
-}
-
-.elements-style:hover{
+  }
+  
+  .elements-style:hover {
     cursor: pointer;
     transform: scale(0.9);
-}
-
-.elements-position{
+  }
+  
+  .elements-position {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-}
-
-.element-emoji{
+  }
+  
+  .element-emoji {
     font-size: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     margin-top: 10px;
-}
+  }
+  
+  /* Media queries para diferentes resoluciones */
+  
+  /* Estilos para pantallas de hasta 600px de ancho */
+  @media only screen and (max-width: 600px) {
+    .modal {
+      height: auto;
+      width: 30%;
+      max-height: 80vh;
+    }
+  
+    .container-elements {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+  
+    .elements-style {
+      width: 4rem;
+      height: 4rem;
+    }
+  
+    .element-emoji {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Estilos para pantallas de 601px a 900px de ancho */
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    .modal {
+      width: 80%;
+    }
+  
+    .container-elements {
+      gap: 2rem;
+    }
+  }
+  
+  /* Estilos para pantallas de más de 900px de ancho */
+  @media only screen and (min-width: 901px) {
+    .modal {
+      width: 600px;
+    }
+  }
+  
