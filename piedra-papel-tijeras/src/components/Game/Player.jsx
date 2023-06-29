@@ -2,6 +2,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 const Player = ({ player, openModal, isFirstPlayer, win }) => {
+  
   const playerButtonClass = classNames({
     "button-static": player.currentChoice || win,
     "button-style": !player.currentChoice && !win,
