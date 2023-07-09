@@ -15,7 +15,7 @@ const SheldonVideo = () => {
           allowFullScreen
         />
       </div>
-      <div style={{ paddingTop: "2rem" }}>
+      <div>
         <Link to="/" className="text-link">
           Volver a inicio
         </Link>
