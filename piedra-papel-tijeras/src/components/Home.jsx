@@ -16,7 +16,7 @@ const Home = () => {
                     <Link to="/game?singlePlayer=true">
                     <img src={SinglePlayer} alt="foto de singlePlayer" className="container-img"/>
                     </Link>
-                    <p>VS La IA</p>
+                    <p>VS IA</p>
                 </div>
                 <div className="animate__animated animate__fadeInRight container-player">
                     <h3 className="title-2">Dos Jugadores</h3>

@@ -11,8 +11,10 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: black;
-  color:white;
+  background-image: url("../src/img/fondo-4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
   overflow: hidden;
 }
 
