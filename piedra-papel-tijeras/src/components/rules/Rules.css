@@ -72,16 +72,25 @@
   }
 
   .rules-img {
-    width: 40%;
-    margin-right: 5rem;
+    display: none;
   }
 
   .rules-description-text p {
-    font-size: 1.3rem;
+    font-size: 1rem;
+  }
+
+  .text-link {
+    display: inline-block;
+    color: grey;
+    font-size: 1.0rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
   }
 
   .go-back {
     padding: 1rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -92,12 +101,21 @@
   }
 
   .rules-img {
-    width: 20%;
+    width: 15%;
     margin-right: 7rem;
   }
 
   .rules-description-text p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  .text-link {
+    display: inline-block;
+    color: grey;
+    font-size: 1.0rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
   }
 
   .go-back {
