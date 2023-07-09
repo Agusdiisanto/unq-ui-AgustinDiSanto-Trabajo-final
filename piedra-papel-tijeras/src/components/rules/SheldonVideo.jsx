@@ -8,7 +8,7 @@ const SheldonVideo = () => {
    allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
    gyroscope; picture-in-picture; web-share" allowfullscreen>
    </iframe>
-    <div>
+    <div style={{paddingTop: "2rem"}}>
       <Link to="/" className="text-link">Volver a inicio</Link>
     </div>
   </div>
