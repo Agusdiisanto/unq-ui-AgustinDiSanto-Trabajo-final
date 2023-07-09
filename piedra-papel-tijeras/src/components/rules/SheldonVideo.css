@@ -1,0 +1,74 @@
+.container-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    height: 100vh;
+}
+  
+.video-wrapper {
+    width: 80%;
+    max-width: 1200px; /* Tamaño máximo para pantallas grandes */
+    height: 0;
+    padding-bottom: 56.25%; /* Proporción 16:9 para el aspecto del video */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Agrega alineación vertical al centro */
+}
+  
+.video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 80%; /* Ajusta la altura del video según tus preferencias */
+    top: 50%;
+    transform: translateY(-50%); /* Centra verticalmente el video */
+    left: 0;
+}
+  
+.text-link {
+    display: inline-block;
+    color: grey;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+  
+.text-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+  
+  /* Media queries para diferentes resoluciones */
+  
+  /* Estilos para pantallas de hasta 600px de ancho */
+@media only screen and (max-width: 600px) {
+    .video-wrapper {
+      width: 100%; /* El video ocupará el ancho completo en dispositivos móviles */
+      padding-bottom: 56.25%; /* Proporción 16:9 para el aspecto del video */
+    }
+}
+  
+  /* Estilos para pantallas de 601px a 900px de ancho */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .video-wrapper {
+      width: 70%;
+    }
+}
+  
+  /* Estilos para pantallas de 901px a 1200px de ancho */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+    .video-wrapper {
+      width: 80%;
+    }
+}
+  
+  /* Estilos para pantallas de más de 1200px de ancho */
+@media only screen and (min-width: 1201px) {
+    .video-wrapper {
+      width: 100%;
+    }
+}
+  
