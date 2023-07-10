@@ -28,7 +28,7 @@ const Home = () => {
             </div>
             <div>
                 <Link to="/rules">
-                <p className="text-link">¿No conoces las reglas del juego?</p>
+                <p className="go-rules">¿No conoces las reglas del juego?</p>
                 </Link>
             </div>
         </div>

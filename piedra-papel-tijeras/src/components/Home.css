@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .container-home p {
@@ -24,6 +24,7 @@
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  padding: 0 1rem; /* Agregamos un relleno lateral para evitar que los elementos se corten en pantallas estrechas */
 }
 
 .container-mode-title {
@@ -38,6 +39,7 @@
   padding: 1rem 0;
   width: 100%;
   justify-content: center;
+  flex-wrap: wrap; /* Añadimos flex-wrap para que los botones se envuelvan en pantallas estrechas */
 }
 
 .container-buttons p {
@@ -48,6 +50,8 @@
   height: 15vw;
   width: 15vw;
   transition: transform 0.3s ease-in-out;
+  object-fit: cover; /* Aseguramos que las imágenes se ajusten correctamente en sus contenedores */
+  padding: 0;
 }
 
 .container-img:hover {
@@ -63,6 +67,21 @@
   gap: 5px;
 }
 
+.go-rules{
+  display: inline-block;
+  color: grey;
+  font-size: 1.0rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.go-rules:hover {
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 .title-1 {
   color: #20abff;
 }
@@ -71,10 +90,48 @@
   color: #fb6e00;
 }
 
+.text-link {
+  color: #20abff;
+  text-decoration: underline;
+}
+
 /* Media queries para diferentes resoluciones */
 
-/* Estilos para pantallas de hasta 600px de ancho */
-@media only screen and (max-width: 600px) {
+/* Estilos para pantallas de hasta 480px de ancho (dispositivos móviles en orientación vertical) */
+@media only screen and (max-width: 399px){
+  .container-title {
+    font-size: 2rem;
+  }
+
+  .container-mode-title {
+    font-size: 1rem;
+  }
+
+  .container-home{
+    padding: 1rem;
+  }
+
+  .container-buttons {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .container-img {
+    height: 20vw;
+    width: 20vw;
+  }
+
+  .go-rules{
+    display: inline-block;
+    color: grey;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 481px) {
   .container-title {
     font-size: 3rem;
   }
@@ -83,23 +140,29 @@
     font-size: 1.8rem;
   }
 
+  .container-home{
+    padding: 1rem;
+  }
+
   .container-buttons {
     flex-direction: column;
     gap: 2rem;
   }
 
-  .container-buttons p {
-    margin: 0;
+  .container-img {
+    height: 25vw;
+    width: 25vw;
+    padding: 0;
   }
 
-  .container-img {
-    height: 30vw;
-    width: 30vw;
+  .text-link {
+    font-size: 1rem;
+    padding-bottom: 5rem;
   }
 }
 
-/* Estilos para pantallas de 601px a 900px de ancho */
-@media only screen and (min-width: 601px) and (max-width: 900px) {
+/* Estilos para pantallas de 481px a 768px de ancho (dispositivos móviles en orientación horizontal y tabletas) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
   .container-title {
     font-size: 3.5rem;
   }
@@ -108,18 +171,26 @@
     font-size: 2rem;
   }
 
+  .container-home{
+    padding: 1rem;
+  }
+
   .container-buttons {
-    gap: 6rem;
+    gap: 5rem;
   }
 
   .container-img {
-    height: 12vw;
-    width: 12vw;
+    height: 35vw;
+    width: 35vw;
+    padding: 0;
   }
+
+  
+
 }
 
-/* Estilos para pantallas de 901px a 1200px de ancho */
-@media only screen and (min-width: 901px) and (max-width: 1200px) {
+/* Estilos para pantallas de 769px a 1024px de ancho (tabletas y pantallas de escritorio pequeñas) */
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
   .container-title {
     font-size: 4.5rem;
   }
@@ -128,29 +199,69 @@
     font-size: 2.5rem;
   }
 
+  .container-home{
+    padding: 1rem;
+  }
+
   .container-buttons {
-    gap: 8rem;
+    gap: 6rem;
   }
 
   .container-img {
-    height: 10vw;
-    width: 10vw;
+    height: 35vw;
+    width: 35vw;
+    padding: 0;
   }
+ 
 }
 
-/* Estilos para pantallas de más de 1200px de ancho */
-@media only screen and (min-width: 1201px) {
+/* Estilos para pantallas de 1025px a 1440px de ancho (pantallas de escritorio medianas) */
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
   .container-title {
     font-size: 4rem;
-    padding: 0;
+    padding: 0rem;
   }
 
   .container-mode-title {
     font-size: 2rem;
   }
 
+  .container-buttons {
+    gap: 3rem;
+    padding: 0;
+  }
+
   .container-img {
     height: 15vw;
     width: 15vw;
+    padding: 0;
+  }
+
+  .go-rules{
+    display: inline-block;
+    color: grey;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 0;
+  }
+
+}
+
+/* Estilos para pantallas de más de 1440px de ancho (pantallas de escritorio grandes) */
+@media only screen and (min-width: 1441px) {
+  .container-title {
+    font-size: 6rem;
+    padding: 0;
+  }
+
+  .container-mode-title {
+    font-size: 3rem;
+  }
+
+  .container-img {
+    height: 15vw;
+    width: 15vw;
+    padding: 0;
   }
 }
