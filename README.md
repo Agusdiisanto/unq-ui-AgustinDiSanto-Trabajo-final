@@ -43,3 +43,5 @@ Abre tu navegador y juega ingresando a:
 http://localhost:5173/
 ```
 
+Que disfrute del juego ! 
+
