@@ -1,22 +1,24 @@
-# Enunciado
+# Juego de Piedra, Papel, Tijera, Lagarto o Spock
 
-Tienen que programar un juego de Piedra, Papel, Tijera, Lagarto o Spock, el cual se hizo conocido gracias a Sheldon Cooper pero en realidad fue inventado por Sam Kass y Karen Bryla.
+Trabajo final integrador sobre un juego para Interfaces de Usuario.
 
-Link : 
-[https://github.com/unq-ui/material/tree/master/TPs/2023s1](https://github.com/unq-ui/material/blob/master/TFIs/2023s1-TFI.md)
+## Enunciado
 
+> Tienen que programar un juego de Piedra, Papel, Tijera, Lagarto o Spock, el cual se hizo conocido gracias a Sheldon Cooper pero en realidad fue inventado por Sam Kass y Karen Bryla.
 
-## ¿Como correr el juego?
+Link: [TFI 2023s1](https://github.com/unq-ui/material/blob/master/TFIs/2023s1-TFI.md)
 
-* Situarnos en la carpeta piedras-papel-tijeras <br> 
-* En la terminal ejecutar el comando npm install vite --save-dev <br> 
-* Ejectutar el comando npm i para instalar todas las dependencias <br> 
-* Ejectutar el comando npm run dev <br> 
-* En la terminal figurara la url para acceder a la app <br> 
+## ¿Cómo correr el juego?
 
-Ultimo paso! Disfrutar del juego! 
+Para correr el juego, sigue estos pasos:
 
+1. Instala las siguientes herramientas:
+   - [Git](https://git-scm.com/)
+   - [Node.js](https://nodejs.org/) (según tu sistema operativo)
+   - [Visual Studio Code](https://code.visualstudio.com/) (según tu sistema operativo)
 
+2. Clona el repositorio ejecutando el siguiente comando en la consola:
 
-
-
+   ```shell
+   git clone https://github.com/Agusdiisanto/unq-ui-AgustinDiSanto-Trabajo-final.git
+   ```
