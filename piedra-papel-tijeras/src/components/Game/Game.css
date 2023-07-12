@@ -53,13 +53,17 @@
 .container-game-winner {
   text-align: center;
   margin-bottom: 2rem;
+  overflow: auto;
+  max-height: 56vh;
 }
 
-.container-game-winner h3 {
-  font-size: 2.2rem;
-  color: #858585;
+
+.winner-message {
+  font-size: 1.8rem;
   margin-bottom: 20px;
+  opacity: 0.5;
 }
+
 
 .winner-buttons {
   display: flex;
@@ -99,14 +103,13 @@
 
 /* Media queries para diferentes resoluciones */
 
-/* Estilos para pantallas de hasta 600px de ancho */
-@media only screen and (max-width: 600px) {
+/* Estilos para pantallas de hasta 400px de ancho */
+@media only screen and (max-width: 400px) {
   .container-game {
     flex-direction: column;
-    padding: 4rem;
+    padding: 2rem;
     gap: 2rem;
     align-items: center;
-    margin-bottom: 3rem;
   }
 
   .effect-winner {
@@ -129,17 +132,57 @@
   }
 
   .container-game-winner {
-    margin-bottom: 1rem;
+    max-height: 40vh;
   }
 
-  .container-game-winner h3 {
-    font-size: 1.8rem;
+  .winner-message {
+    font-size: 1.5rem;
     margin-bottom: 10px;
+    opacity: 0.5;
+  }
+
+  .winner-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Estilos para pantallas de 401px a 600px de ancho */
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  .container-game {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .effect-winner {
+    box-shadow: -1px 0px 20px 2px rgba(4, 255, 0, 0.8);
+  }
+
+  .effect-loser {
+    box-shadow: -1px 0px 25px 2px rgba(255, 0, 0, 0.8);
+  }
+
+  .button-style,
+  .button-static {
+    width: 7rem;
+    height: 7rem;
+    font-size: 3.5rem;
+  }
+
+  .score-text {
+    font-size: 1.2rem;
+  }
+
+  .container-game-winner {
+    max-height: 45vh;
   }
 
   .winner-message {
     font-size: 1.8rem;
     margin-bottom: 10px;
+    opacity: 0.5;
   }
 
   .winner-button {

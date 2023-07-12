@@ -15,7 +15,7 @@
   font-weight: bold;
   font-size: 4rem;
   opacity: 0.7;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   font-family: monospace;
 }
 
@@ -24,7 +24,7 @@
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-  padding: 0 1rem; /* Agregamos un relleno lateral para evitar que los elementos se corten en pantallas estrechas */
+  padding: 0 1rem; 
 }
 
 .container-mode-title {
@@ -117,8 +117,8 @@
   }
 
   .container-img {
-    height: 20vw;
-    width: 20vw;
+    height: 15vw;
+    width: 15vw;
   }
 
   .go-rules{
@@ -184,9 +184,6 @@
     width: 35vw;
     padding: 0;
   }
-
-  
-
 }
 
 /* Estilos para pantallas de 769px a 1024px de ancho (tabletas y pantallas de escritorio pequeñas) */
